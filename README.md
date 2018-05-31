@@ -1,6 +1,6 @@
 # cfs
 
-##CFS
+
 At the moment, RPI event coordinators need to use an outdated and user-unfriendly website to reserve rooms or courts in RPI facilities. 
 The schedule for these facilities is also only available on this website. Mobile users are also out of luck because the website only has
 a desktop-only version, and has no app alternative.
