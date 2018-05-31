@@ -3,7 +3,7 @@
 **Repository:** https://github.com/olivierpo/cfs
 
 ## Current Members
-Hosam Hamed, Tyler Chang, Tawhid Khan, Olivier Poulin, Jihun Son
+Hosam Hamed, Tyler Chang, Tawhid Khan, Olivier Poulin, Jihun Son, Tommy Olney
 
 ## Languages
 Java, HTML/CSS, JavaScript/Django, SQL, PHP
