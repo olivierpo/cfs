@@ -1,0 +1,59 @@
+header {
+    float: left;
+    margin:0 0 30px 0;
+    padding: 5px 0 0 0 ;
+    width: 100%;
+    background-image:url('Union-Logo-Design-WebLeveled.jpg');
+}
+
+body {
+    background-image: url("geometric-pattern-3d-blocks.jpg");
+}
+
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 15px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+input[type=number], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 15px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+
+input[type=submit] {
+    background-color: #ff0010;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+
+
+input[type=submit]:hover {
+    background-color: #510106;
+}
+
+
+.container {
+    border-radius: 15px;
+    background-color: #f2f2f2;
+    opacity: 0.98;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
