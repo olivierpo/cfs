@@ -1,45 +1,58 @@
 <template>
-  <v-ons-page id="app">
-    <v-ons-splitter>
-      <v-ons-splitter-side swipeable collapse width="250px"
-        :animation="$ons.platform.isAndroid() ? 'overlay' : 'reveal'"
-        :open.sync="menuIsOpen">
-        <menu-page></menu-page>
-      </v-ons-splitter-side>
-
-      <v-ons-splitter-content>
-        <home-page></home-page>
-      </v-ons-splitter-content>
-    </v-ons-splitter>
-  </v-ons-page>
+  <div>
+    <h1>CFS</h1>
+    <h2>schedule-main</h2>
+    <schedule-main :scheduleRows="mockSchedule" />
+  </div>
 </template>
-
+<style lang="scss">
+@import './styles/custom-bootstrap.scss';
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+</style>
 <script>
-import HomePage from './components/HomePage';
-import MenuPage from './components/MenuPage';
+import scheduleMain from './containers/schedule_main/index';
+
+function hours(a) {
+  const d = new Date();
+  return new Date(d.getTime() + (a * 1000 * 3600));
+}
 
 export default {
   name: 'app',
-  computed: {
-    menuIsOpen: {
-      get() {
-        return this.$store.state.splitter.open;
-      },
-      set(newValue) {
-        this.$store.commit('splitter/toggle', newValue);
-      },
-    },
-  },
   components: {
-    HomePage,
-    MenuPage,
+    scheduleMain,
+  },
+  data() {
+    return {
+      mockSchedule: [
+        {
+          name: 'Room 1',
+          events: [
+            {
+              startTime: hours(0),
+              endTime: hours(5),
+              content: 'Event 1',
+            },
+            {
+              startTime: hours(6),
+              endTime: hours(7),
+              content: 'Event 1b',
+            },
+          ],
+        },
+        {
+          name: 'Another Room 2',
+          events: [
+            {
+              startTime: hours(1.5),
+              endTime: hours(6),
+              content: 'Event 2',
+            },
+          ],
+        },
+      ],
+    };
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-ons-splitter-side[side=left][animation=overlay] {
-  border-right: 1px solid #BBB;
-}
-</style>
