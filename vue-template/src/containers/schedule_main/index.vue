@@ -18,15 +18,15 @@
 }
 </style>
 <script>
-import schedule from '../../components/schedule';
-import datePicker from '../../components/date-picker';
+import Schedule from '../../components/Schedule';
+import DatePicker from '../../components/DatePicker';
 
 const ONE_HOUR = 1000 * 3600;
 export default {
   name: 'schedule-main',
   components: {
-    schedule,
-    datePicker,
+    Schedule,
+    DatePicker,
   },
   props: {
     scheduleRows: Array,
