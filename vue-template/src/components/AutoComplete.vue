@@ -52,22 +52,17 @@
     margin-left: 20px;
     overflow: auto;
   }
-
   .autocomplete-result {
     list-style: none;
     text-align: left;
     padding: 4px 2px;
     cursor: pointer;
   }
-
   .autocomplete-result:hover {
     background-color: #4AAE9B;
     color: white;
   }
-
   .input-bar {
     margin: 20px 20px;
   }
-
-
 </style>
