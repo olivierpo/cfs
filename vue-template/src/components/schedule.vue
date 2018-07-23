@@ -1,18 +1,18 @@
 <template>
-  <div class="container">
+  <div class="root">
     <div class="header-intersection"></div>
     <div class="column-header-container">
       <template v-for="(time, index) in timeScale">
-        <div class="column-header" :style="getGridStyles(1, index + 2)">
-          {{ new Date(time).getHours() }}
+        <div class="column-header text-muted" :style="getGridStyles(1, index + 2)">
+          {{ formatToHours(new Date(time)) }}
         </div>
       </template>
     </div>
     <template v-for="(row, index) in data.rows">
-      <div class="row-header" :style="getGridStyles(index + 2, 1)">
+      <div class="row-header lead" :style="getGridStyles(index + 2, 1)">
         {{ row.name }}
       </div>
-      <div :style="getGridStyles(index + 2, 2)" class="row-body">
+      <div :style="getGridStyles(index + 2, 2)" class="row-body" v-bind:class="{'row-body--first': index === 0}">
         <div class="row-cell-container">
           <div v-for="(time, timeIndex) in timeScale" class="cell"></div>
         </div>
@@ -51,8 +51,7 @@ export default {
       };
     },
     getEventWrapStyles(event) {
-      const start = this.data.startTime.getTime();
-      const end = this.data.endTime.getTime();
+      const start = this.startTime.getTime();
       const range = (this.timeScale[this.timeScale.length - 1] + this.data.timeIncrement)
         - this.timeScale[0];
       return {
@@ -64,12 +63,29 @@ export default {
     toScaledPercent(x, range) {
       return ((x / range) * 100) + '%';
     },
+    formatToHours(date) {
+      return date.toLocaleString('en-US', { hour: 'numeric', hour12: true });
+    },
   },
   computed: {
+    startTime() {
+      const result = new Date(this.data.date);
+      result.setHours(this.data.startHour);
+      result.setMinutes(0);
+      result.setSeconds(0);
+      return result;
+    },
+    endTime() {
+      const result = new Date(this.data.date);
+      result.setHours(this.data.endHour);
+      result.setMinutes(0);
+      result.setSeconds(0);
+      return result;
+    },
     timeScale() {
       const result = [];
-      const start = this.data.startTime.getTime();
-      const end = this.data.endTime.getTime();
+      const start = this.startTime.getTime();
+      const end = this.endTime.getTime();
       // The length is limited to prevent an infinite loop
       // which will mysteriosly bring down the entire app.
       for (let i = start; i <= end && result.length < 100; i += this.data.timeIncrement) {
@@ -81,7 +97,7 @@ export default {
 };
 </script>
 <style scoped>
-  .container {
+  .root {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
@@ -111,10 +127,20 @@ export default {
     width: 100%;
     height: 100%;
   }
+
+  /* This makes it so borders are not "doubled" between two cells. */
   .cell {
-    outline: 1px solid #AAA;
+    border-right: 1px solid #AAA;
+    border-bottom: 1px solid #AAA;
     flex: 1;
   }
+  .cell:first-of-type {
+    border-left: 1px solid #AAA;
+  }
+  .row-body.row-body--first .cell {
+    border-top: 1px solid #AAA;
+  }
+
   .row-body {
     position: relative;
     height: 3rem;
