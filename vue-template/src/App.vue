@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="container">
-      <schedule-main :scheduleRows="mockSchedule" :buildings="buildings" />
-    </div>
+    <h1>CFS</h1>
+    <h2>schedule-main</h2>
+    <schedule-main :scheduleRows="mockSchedule" />
   </div>
 </template>
 <style lang="scss">
@@ -24,7 +24,6 @@ export default {
   },
   data() {
     return {
-      buildings: ['Cool Building', 'Coolest Building', 'Air-Conditioned Building'],
       mockSchedule: [
         {
           name: 'Room 1',
