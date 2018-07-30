@@ -11,7 +11,7 @@
 <script>
   export default {
     props: {
-      buildings: {
+      items: {
         type: Array,
         required: false,
         default: () => [],
@@ -25,7 +25,7 @@
     },
     computed: {
       results() {
-        return this.buildings.filter(item =>
+        return this.items.filter(item =>
           item.toLowerCase().indexOf(this.search.toLowerCase()) > -1);
       },
     },
@@ -33,6 +33,7 @@
       setResult(result) {
         this.search = result;
         this.showResults = false;
+        this.$emit('input', this.search);
       },
     },
   };

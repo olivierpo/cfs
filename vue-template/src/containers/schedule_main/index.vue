@@ -5,19 +5,19 @@
         <div class="form-inline d-inline-block">
           <div class="input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text">Building</span>
+              <span class="input-group-text">Facility</span>
             </div>
-            <search-bar :buildings="buildings" />
+            <search-bar :items="facilityList" :value="currentFacility" @input="changeCurrentFacility" />
           </div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col col-centered">
-        <date-picker :date.sync="date" />
+        <date-picker :date="currentDate" @update:date="changeCurrentDate" />
       </div>
     </div>
-    <div class="row">
+    <div v-show="facilitySelected" class="row">
       <div class="col">
         <schedule :data="scheduleData" />
       </div>
@@ -31,11 +31,14 @@
 }
 </style>
 <script>
+import { mapState, mapMutations } from 'vuex';
+
 import Schedule from '../../components/Schedule';
 import DatePicker from '../../components/DatePicker';
 import SearchBar from '../../components/SearchBar';
 
 const ONE_HOUR = 1000 * 3600;
+
 export default {
   name: 'schedule-main',
   components: {
@@ -43,26 +46,37 @@ export default {
     DatePicker,
     SearchBar,
   },
-  props: {
-    scheduleRows: Array,
-    buildings: Array,
-  },
   data() {
     return {
-      date: new Date(),
     };
   },
   computed: {
     scheduleData() {
-      return {
-        date: this.date,
+      const facility = this.facilities[this.currentFacility];
+      const x = {
+        date: this.currentDate,
         startHour: 9,
         endHour: 12 + 9,
         timeIncrement: ONE_HOUR,
-        rows: this.scheduleRows,
+        ...(this.facilitySelected && { rows: facility.rooms }),
       };
+      return x;
     },
+    ...mapState({
+      facilityList: 'facilityList',
+      facilities: 'facilities',
+      currentDate: 'currentDate',
+      currentFacility: 'currentFacility',
+    }),
+    facilitySelected() {
+      return this.facilities[this.currentFacility] !== undefined;
+    },
+  },
+  methods: {
+    ...mapMutations({
+      changeCurrentDate: 'changeCurrentDate',
+      changeCurrentFacility: 'changeCurrentFacility',
+    }),
   },
 };
 </script>
-
