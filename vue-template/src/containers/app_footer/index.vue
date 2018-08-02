@@ -1,31 +1,44 @@
 <template>
-  <div class="footer d-flex" role="contentinfo">
-  <div class="position-relative d-flex flex-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
-    <ul class="list-style-none d-flex flex-wrap ">
-      <li class="mr-3">&copy; 2018 <span title="0.42237s from unicorn-66984c65d-4c5rr">GitHub</span>, Inc.</li>
-        <li class="mr-3"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
-        <li class="mr-3"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
-        <li class="mr-3"><a href="https://help.github.com/articles/github-security/" data-ga-click="Footer, go to security, text:security">Security</a></li>
-        <li class="mr-3"><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
-        <li><a data-ga-click="Footer, go to help, text:help" href="https://help.github.com">Help</a></li>
-    </ul>
-
-    <a aria-label="Homepage" title="GitHub" class="footer-octicon" href="https://github.com">
-</a>
-   <ul class="list-style-none d-flex flex-wrap ">
-        <li class="mr-3"><a data-ga-click="Footer, go to contact, text:contact" href="https://github.com/contact">Contact GitHub</a></li>
-      <li class="mr-3"><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
-      <li class="mr-3"><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
-      <li class="mr-3"><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
-        <li class="mr-3"><a href="https://blog.github.com" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
-        <li><a data-ga-click="Footer, go to about, text:about" href="https://github.com/about">About</a></li>
-
-    </ul>
-  </div>
-  <div class="d-flex flex-justify-center pb-6">
-    <span class="f6 text-gray-light"></span>
-  </div>
-</div>
+  <footer class="pt-4 my-md-5 pt-md-5 border-top footer">
+    <div class="container">
+        <span class="text-muted">
+        <div class="row">
+          <div class="col-12 col-md">
+            <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Features</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Cool stuff</a></li>
+              <li><a class="text-muted" href="#">Random feature</a></li>
+              <li><a class="text-muted" href="#">Team feature</a></li>
+              <li><a class="text-muted" href="#">Stuff for developers</a></li>
+              <li><a class="text-muted" href="#">Another one</a></li>
+              <li><a class="text-muted" href="#">Last time</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Resources</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Resource</a></li>
+              <li><a class="text-muted" href="#">Resource name</a></li>
+              <li><a class="text-muted" href="#">Another resource</a></li>
+              <li><a class="text-muted" href="#">Final resource</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>About</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Team</a></li>
+              <li><a class="text-muted" href="#">Locations</a></li>
+              <li><a class="text-muted" href="#">Privacy</a></li>
+              <li><a class="text-muted" href="#">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+        </span>
+        </div>
+      </footer>
 </template>
 
 <script>
@@ -35,18 +48,10 @@ export default {
 </script>
 
 <style>
-.footer{
-    height: 108px;
-  background-color: #ef3e29;
-  background-image: linear-gradient(to right,#ef2929,#f05429);
-  font-size: 12px;
-  padding-top: 40px;
-  padding-bottom: 8px;
-  margin-left: auto;
-  margin-right: auto;
-
-}
-.d-flex{
-    display:flex;
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 160px; /* Set the fixed height of the footer here */
 }
 </style>
