@@ -1,7 +1,7 @@
 <template>
 <!-- <b-navbar toggleable="md" type="dark" variant="dark" fixed="top"> -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">CFS</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -12,11 +12,11 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">Schedule</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          Reserve a Room
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Action</a>
@@ -26,7 +26,7 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link disabled" href="#">Search</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -43,23 +43,22 @@ export default {
 </script>
 
 <style>
-.left{
-  float: left;
-  width: 33%;
-  margin: 0;
-  text-align: left;
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
 }
-.right{
-  width: 33%;
-  margin: 0;
-  text-align: right;
+
+.container {
+  max-width: 960px;
 }
-.center{
-  text-align: center;
-  width: 33%;
-  float: left;
-  color: #fff;
-  margin: 0;
+
+.pricing-header {
+  max-width: 700px;
+}
+
+.card-deck .card {
+  min-width: 220px;
 }
 
 </style>
