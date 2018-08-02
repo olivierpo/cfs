@@ -144,6 +144,7 @@ export default {
   .row-body {
     position: relative;
     height: 3rem;
+    overflow: hidden;
   }
   .event {
     padding: 0.75rem;

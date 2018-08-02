@@ -1,5 +1,5 @@
 <template>
-  <div class="root">
+  <div class="form-inline d-inline-block">
     <div class="input-group">
       <div class="input-group-prepend">
         <button class="btn btn-primary" @click="updateDate(new Date(date.getTime() - 1000 * 3600 * 24))">Back</button>
