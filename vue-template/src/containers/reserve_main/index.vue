@@ -44,20 +44,20 @@ import Datepicker from 'vuejs-datepicker';
 export default {
   name: 'test',
   components: {
-      Datepicker,
+    Datepicker,
   },
 
   data() {
-      return {
-          message: '',
-          building: '',
-          room: '',
-          time: '',
-          hour: '',
-          minute: ''
-      }
+    return {
+      message: '',
+      building: '',
+      room: '',
+      time: '',
+      hour: '',
+      minute: '',
+    };
   },
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
