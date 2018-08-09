@@ -5,7 +5,7 @@ import Vue from 'vue';
 import VueOnsen from 'vue-onsenui';
 import store from './store/index';
 import App from './App';
-import router from './routers'
+import router from './routers';
 
 Vue.config.productionTip = false;
 
@@ -15,6 +15,6 @@ Vue.use(VueOnsen);
 new Vue({
   el: '#app',
   store,
-  router: router,
+  router,
   render: h => h(App),
 });
