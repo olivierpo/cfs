@@ -1,12 +1,37 @@
 <template>
   <div>
-      <div class="tests1">
-        <p>Please enter your name:</p>
-        <input v-model="message" placeholder="Enter here">
-        <span>Selected: {{message}}</span>
+      <div class="enterText">
+        <p>Please enter your name:
+        <input v-model="messageName" placeholder="Required"></p>
+        <span>Selected: {{messageName}}</span>
     </div>
 
-    <div class="tests2">
+    <div class="enterText">
+        <p>Name of event:
+        <input v-model="messageEvent" placeholder="Required"></p>
+        <span>Selected: {{messageEvent}}</span>
+    </div>
+
+    <div class="enterText">
+        <p>Name of organizer:
+        <input v-model="messageOrginizer" placeholder="Required"></p>
+        <span>Selected: {{messageOrginizer}}</span>
+    </div>
+
+    <div class="enterText">
+        <p>Number of people:
+        <input v-model="messageNum" placeholder="Required"></p>
+        <span>Selected: {{messageNum}}</span>
+    </div>
+
+    <div class="enterText">
+        <p>Extra details:
+        <input v-model="messageOption" placeholder="Optional"></p>
+        <span>Selected: {{messageOption}}</span>
+    </div>
+
+
+    <div class="checkBuildings">
       <select v-model="building">
           <option disabled value="">Please select one</option>
           <option>Carnegie</option>
@@ -16,17 +41,20 @@
       <span>Selected: {{ building }}</span>
     </div>
 
-    <div class="tests3">
+    <!-- <div class="tests3">
         <datepicker :inline="true"></datepicker>
-    </div>
+    </div> -->
 
-       <!-- <select v-model="room">
-          <option disabled value="">Please select one</option>
+    <div class="checkRooms">
+    <span v-if="seen">
+       <select v-model="room">
           <option>101</option>
           <option>102</option>
           <option>103</option>
       </select>
-      <span>Selected: {{ room }}</span> -->
+    </span>
+      <span>Selected: {{ room }}</span>
+  </div>
 
       <!-- <select v-model="time">
           <input v-model="hour" placeholder="Hour">
@@ -49,12 +77,17 @@ export default {
 
   data() {
     return {
-      message: '',
+      messageName: '',
+      messageEvent: '',
+      messageOrginizer: '',
+      messageNum: '',
+      messageOption: '',
       building: '',
       room: '',
       time: '',
       hour: '',
       minute: '',
+      seen: true,
     };
   },
 };
