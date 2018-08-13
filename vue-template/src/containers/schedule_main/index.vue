@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="row">
+    <div class="row mt-3">
       <div class="col col-centered">
         <div class="form-inline d-inline-block">
           <div class="input-group">
@@ -12,14 +12,19 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row mt-3">
       <div class="col col-centered">
         <date-picker :date="currentDate" @update:date="changeCurrentDate" />
       </div>
     </div>
-    <div v-show="facilitySelected" class="row">
+    <div v-show="facilitySelected" class="row mt-3">
       <div class="col">
         <schedule :data="scheduleData" />
+      </div>
+    </div>
+    <div v-show="!facilitySelected" class="row mt-3">
+      <div class="col">
+        <p class="display-4 text-center">Select a facility</p>
       </div>
     </div>
   </div>

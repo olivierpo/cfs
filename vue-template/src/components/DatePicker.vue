@@ -4,7 +4,7 @@
       <div class="input-group-prepend">
         <button class="btn btn-primary" @click="updateDate(new Date(date.getTime() - 1000 * 3600 * 24))">Back</button>
       </div>
-      <datepicker input-class="form-control" :value="date" @input="updateDate($event)"></datepicker>
+      <datepicker input-class="form-control text-center" :value="date" @input="updateDate($event)"></datepicker>
       <div class="input-group-append">
         <button class="btn btn-primary" @click="updateDate(new Date(date.getTime() + 1000 * 3600 * 24))">Forward</button>
       </div>
