@@ -15,6 +15,11 @@ class Room{
 		$this->connection = $db;
 	}
 
+	public function create()
+	{
+
+	}
+
 	public function read()
 	{
 		$query = "SELECT * from cfs.rooms";
@@ -23,6 +28,26 @@ class Room{
 		$stmt->execute();
 
 		return $stmt;
+	}
+
+	public function read_distinct()
+	{
+		$query = "SELECT DISTINCT BUILDING from cfs.rooms";
+		$stmt = $this->connection->prepare($query);
+
+		$stmt->execute();
+
+		return $stmt;
+	}
+
+	public function update()
+	{
+
+	}
+
+	public function delete()
+	{
+		
 	}
 }
 ?>	

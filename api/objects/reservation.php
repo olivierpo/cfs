@@ -27,7 +27,7 @@ class Reservation{
 
 		return $stmt;
 	}
-
+	
 	function create()
 	{
 		$query = "INSERT INTO
@@ -57,6 +57,18 @@ class Reservation{
 			return true;
 		}
 		return false;
+	}
+
+
+	
+	public function update()
+	{
+
+	}
+
+	public function delete()
+	{
+		
 	}
 }
 ?>	
