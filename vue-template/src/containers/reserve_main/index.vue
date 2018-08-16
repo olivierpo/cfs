@@ -58,6 +58,10 @@
       <!-- <span>Selected: {{ room }}</span> -->
   </div>
 
+  <div>
+      <button>Submit room request</button>
+  </div>
+
       <!-- <select v-model="time">
           <input v-model="hour" placeholder="Hour">
           <span>:</span>
