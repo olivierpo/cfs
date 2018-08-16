@@ -13,11 +13,11 @@
         <!-- <span>Selected: {{messageEvent}}</span> -->
     </div>
 
-    <!-- <div class="enterText">
+    <div class="enterText">
         <p>Name of organizer:
         <input v-model="messageOrginizer" placeholder="Required"></p>
-        <span>Selected: {{messageOrginizer}}</span>
-    </div> -->
+        <!-- <span>Selected: {{messageOrginizer}}</span> -->
+    </div>
 
     <div class="enterText">
         <p>Number of people:
@@ -25,37 +25,38 @@
         <!-- <span>Selected: {{messageNum}}</span> -->
     </div>
 
-    <!-- <div class="enterText">
+    <div class="enterText">
         <p>Extra details:
         <input v-model="messageOption" placeholder="Optional"></p>
-        <span>Selected: {{messageOption}}</span>
-    </div> -->
+        <!-- <span>Selected: {{messageOption}}</span> -->
+    </div>
 
 
-    <!-- <div class="checkBuildings">
+    <div class="checkBuildings">
       <select v-model="building">
-          <option disabled value="">Please select one</option>
+          <option disabled value="">Please select building</option>
           <option>Carnegie</option>
           <option>Darrin</option>
           <option>J-Rowl</option>
       </select>
-      <span>Selected: {{ building }}</span>
-    </div> -->
+      <!-- <span>Selected: {{ building }}</span> -->
+    </div>
 
-    <div class="tests3">
+    <div class="tests3" style="position:absolute; right:500px; top:70px;">
         <datepicker :inline="true"></datepicker>
     </div>
 
-    <!-- <div class="checkRooms">
+    <div class="checkRooms">
     <span v-if="seen">
        <select v-model="room">
+          <option disabled value="">Please select room</option>
           <option>101</option>
           <option>102</option>
           <option>103</option>
       </select>
     </span>
-      <span>Selected: {{ room }}</span>
-  </div> -->
+      <!-- <span>Selected: {{ room }}</span> -->
+  </div>
 
       <!-- <select v-model="time">
           <input v-model="hour" placeholder="Hour">
