@@ -1,37 +1,38 @@
 <template>
   <div>
+      <!-- commented out spans are mostly to test for outputs  -->
       <div class="enterText">
         <p>Please enter your name:
         <input v-model="messageName" placeholder="Required"></p>
-        <span>Selected: {{messageName}}</span>
+        <!-- <span>Selected: {{messageName}}</span> -->
     </div>
 
     <div class="enterText">
         <p>Name of event:
         <input v-model="messageEvent" placeholder="Required"></p>
-        <span>Selected: {{messageEvent}}</span>
+        <!-- <span>Selected: {{messageEvent}}</span> -->
     </div>
 
-    <div class="enterText">
+    <!-- <div class="enterText">
         <p>Name of organizer:
         <input v-model="messageOrginizer" placeholder="Required"></p>
         <span>Selected: {{messageOrginizer}}</span>
-    </div>
+    </div> -->
 
     <div class="enterText">
         <p>Number of people:
         <input v-model="messageNum" placeholder="Required"></p>
-        <span>Selected: {{messageNum}}</span>
+        <!-- <span>Selected: {{messageNum}}</span> -->
     </div>
 
-    <div class="enterText">
+    <!-- <div class="enterText">
         <p>Extra details:
         <input v-model="messageOption" placeholder="Optional"></p>
         <span>Selected: {{messageOption}}</span>
-    </div>
+    </div> -->
 
 
-    <div class="checkBuildings">
+    <!-- <div class="checkBuildings">
       <select v-model="building">
           <option disabled value="">Please select one</option>
           <option>Carnegie</option>
@@ -39,13 +40,13 @@
           <option>J-Rowl</option>
       </select>
       <span>Selected: {{ building }}</span>
-    </div>
-
-    <!-- <div class="tests3">
-        <datepicker :inline="true"></datepicker>
     </div> -->
 
-    <div class="checkRooms">
+    <div class="tests3">
+        <datepicker :inline="true"></datepicker>
+    </div>
+
+    <!-- <div class="checkRooms">
     <span v-if="seen">
        <select v-model="room">
           <option>101</option>
@@ -54,7 +55,7 @@
       </select>
     </span>
       <span>Selected: {{ room }}</span>
-  </div>
+  </div> -->
 
       <!-- <select v-model="time">
           <input v-model="hour" placeholder="Hour">
